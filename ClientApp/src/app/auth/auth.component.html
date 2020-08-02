@@ -1,0 +1,32 @@
+<div class="inner_body">
+  <!-- <div class="container"> -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="mat-headline">Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input matInput placeholder="username" value="">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" routerLink="/admin">ADMIN</button>
+      <button mat-flat-button color="accent" routerLink="/user">USER</button>
+    </mat-card-actions>
+    <!-- <input type="text" name="message" [(ngModel)]="message" />
+        <button (click)="echo()">Echo</button>
+        <p *ngFor="let m of messages">{{ m }}</p> -->
+  </mat-card>
+  <!-- </div> -->
+</div>

@@ -1,0 +1,39 @@
+.inner_body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color:#444;
+
+  mat-card {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 24px;
+
+    mat-card-header{
+      margin: 16px 0;
+    }
+
+    .mat-card-title{
+      font-size: 28px;
+      font-weight: 600;
+    }
+    
+    mat-form-field { 
+      width: 100%;
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 16px !important;
+
+      button {
+        width:40%;
+        margin: 0 16px;
+      }
+    }
+  }
+}
+
