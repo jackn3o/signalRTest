@@ -10,12 +10,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 You need to have, you can skipped if already installed
 
-```
 .NETCore SDK : https://dotnet.microsoft.com/download
 Node.js and NPM: https://nodejs.org/en/
 git cli: https://git-scm.com/downloads
 
-```
 
 ### Installing
 
