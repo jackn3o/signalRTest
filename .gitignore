@@ -230,6 +230,3 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 myDb.db
-shopping.db
-shopping.db-shm
-shopping.db-wal
