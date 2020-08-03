@@ -54,9 +54,9 @@ Microsoft.Hosting.Lifttime...
 1. Open 2 Tab/Window of browser
 2. Open the url that print at cmd, default url will be 
 
-```
-http://localhost:5000 or https://localhost:5001
-```
+http://localhost:5000 or  
+https://localhost:5001
+
 
 3. A mockup login screen will appear (but not a working login page,just ui)
 4. 1 tab/window of browser click admin to access Admin Dashboard,
