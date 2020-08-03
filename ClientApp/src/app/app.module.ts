@@ -5,33 +5,35 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './admin/admin.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { UserComponent } from './user/user.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list'
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     AuthComponent,
     AdminComponent,
+    DialogComponent,
     UserComponent,
-    CounterComponent,
-    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,10 +42,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     RouterModule.forRoot([
       { path: '', component: AuthComponent, pathMatch: 'full' },
       { path: 'admin', component: AdminComponent },
-      { path: 'counter', component: CounterComponent },
       { path: 'user', component: UserComponent },
     ]),
     BrowserAnimationsModule,
+    FlexLayoutModule,
     // material angular
     MatToolbarModule,
     MatFormFieldModule,
@@ -52,9 +54,18 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatListModule,
+    MatTooltipModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDividerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogComponent
+  ]
 })
 export class AppModule { }

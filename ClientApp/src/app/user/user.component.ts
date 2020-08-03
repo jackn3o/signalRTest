@@ -1,22 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import { HttpClient } from '@angular/common/http';
+// import { MediaChange, MediaObserver } from "@angular/flex-layout";
+// import { Subscription } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './user.component.html',
-  styleUrls: ['../app.component.scss']
+  styleUrls: ['./user.component.scss', '../app.component.scss']
 })
 
 export class UserComponent implements OnInit {
-  public message: string = '';
-  public messages: string[] = [];
-  public hubConnection: HubConnection;
+
+  public hubConnection: HubConnection
+  Products: Product[] = []
+
+  constructor(
+    public http: HttpClient,
+    @Inject('BASE_URL') public baseurl: string) {
+
+    this.getShoppingList()
+  }
 
   ngOnInit() {
-    this.hubConnection = new HubConnectionBuilder().withUrl("/echo").build();
-    // this.hubConnection = new HubConnection("/echo");
-    this.hubConnection.on("Send", (msg) => {
-      this.messages.push(msg);
+    this.hubConnection = new HubConnectionBuilder().withUrl("/productHub").build();
+
+    this.hubConnection.on("refreshProducts", () => {
+      this.getShoppingList()
     })
 
     this.hubConnection.start()
@@ -24,7 +36,23 @@ export class UserComponent implements OnInit {
       .catch(e => { console.error(e) })
   }
 
-  echo() {
-    this.hubConnection.invoke("Echo", this.message);
+  // ngOnDestroy() {
+  //   this.watcher.unsubscribe();
+  // }
+
+  getShoppingList() {
+    this.http.get<Product[]>(this.baseurl + 'api/shopping').subscribe(result => {
+      this.Products = result
+    }, error => console.error(error))
   }
+
+}
+
+
+interface Product {
+  id: number,
+  description: string,
+  price: number,
+  qty: number,
+  isPublished: boolean
 }

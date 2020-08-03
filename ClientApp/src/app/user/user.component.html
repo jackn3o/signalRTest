@@ -1,12 +1,17 @@
 <mat-toolbar>eCommercial</mat-toolbar>
-<div class="container pa_3">
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
+<div class="container pa_3" *ngIf="Products && Products.length>0">
+  <mat-grid-list cols="2" rowHeight="160px" gutterSize="16px">
+    <mat-grid-tile *ngFor="let p of Products">
+      <mat-card>
+
+        <mat-card-title>
+          <mat-icon>image</mat-icon>{{ p.description }}
+        </mat-card-title>
+        <mat-card-content>
+          <p><span>Price</span> <strong>{{ p.price }}</strong></p>
+          <p><span>Balance</span> <strong>{{ p.quantity }}</strong></p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
-  <input type="text" name="message" [(ngModel)]="message" />
-  <button (click)="echo()">Echo</button>
-  <p *ngFor="let m of messages">{{ m }}</p>
 </div>

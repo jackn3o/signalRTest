@@ -1,7 +1,54 @@
-<h1>Counter</h1>
+<mat-toolbar>
+    Admin Dashboard
+    <span class="spacer"></span>
+    <button mat-flat-button color="primary" (click)="openDialog()">Create</button>
+</mat-toolbar>
+<div class="container">
+    <mat-list>
+        <h3 mat-subheader>Products</h3>
 
-<p>This is a simple example of an Angular component.</p>
-
-<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
-
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+        <mat-list-item class="title_row">
+            <div matLine>
+                <div class="d_flex">
+                    <div class="flex">
+                        Description
+                    </div>
+                    <div class="price">
+                        Price
+                    </div>
+                    <div class="quantity">
+                        Quantity
+                    </div>
+                    <div class="publish">
+                        Is Published?
+                    </div>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let p of Products">
+            <mat-icon mat-list-icon>image</mat-icon>
+            <div matLine>
+                <div class="d_flex">
+                    <div class="flex">
+                        {{ p.description }}
+                    </div>
+                    <div class="price text_right">
+                        $ {{ p.price }}
+                    </div>
+                    <div class="quantity text_right">
+                        {{ p.quantity }}
+                    </div>
+                    <div class="publish">
+                        <mat-chip *ngIf="p.isPublished" color="primary" selected>Published</mat-chip>
+                    </div>
+                </div>
+            </div>
+            <button mat-icon-button matTooltip="Edit" (click)="openDialog(p.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+    <small>* Only published item will display on customer shopping list</small>
+</div>
