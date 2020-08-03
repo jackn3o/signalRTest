@@ -11,9 +11,9 @@ These instructions will get you a copy of the project up and running on your loc
 You need to have those cli command ready, you can skipped if already installed
 else please download from the provided link 
 
-(dotnet) .NETCore SDK : https://dotnet.microsoft.com/download
-(npm) Node.js: https://nodejs.org/en/
-(git) git cli: https://git-scm.com/downloads
+(dotnet) .NETCore SDK : https://dotnet.microsoft.com/download  
+(npm) Node.js: https://nodejs.org/en/  
+(git) git cli: https://git-scm.com/downloads  
 
 
 ### Installing
@@ -21,7 +21,7 @@ else please download from the provided link
 1. Clone current repo to your local, open CMD and run below script to clone
 
 ```
-git clone https://github.com/jackn3o/signalRTest.git {optional: preferred repo name}
+git clone https://github.com/jackn3o/signalRTest.git {space then preferred folder name in your local: optional}
 ```
 
 2. Once complete, cd to repo directory
@@ -43,8 +43,11 @@ dotnet restore
 dotnet run
 ```
 
-wait until above cmd execute completely and you will saw message like Microsoft.Hosting.Lifttime...
+wait until above cmd execute completely and you will saw message like
 
+```
+Microsoft.Hosting.Lifttime...
+```
 
 ## Testing
 
