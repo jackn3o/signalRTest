@@ -8,11 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to have, you can skipped if already installed
+You need to have those cli command ready, you can skipped if already installed
+else please download from the provided link 
 
-.NETCore SDK : https://dotnet.microsoft.com/download
-Node.js and NPM: https://nodejs.org/en/
-git cli: https://git-scm.com/downloads
+(dotnet) .NETCore SDK : https://dotnet.microsoft.com/download
+(npm) Node.js: https://nodejs.org/en/
+(git) git cli: https://git-scm.com/downloads
 
 
 ### Installing
