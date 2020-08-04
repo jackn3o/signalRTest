@@ -21,7 +21,7 @@ else please download from the provided link
 1. Clone current repo to your local, open CMD and run below script to clone
 
 ```
-git clone https://github.com/jackn3o/signalRTest.git {space then preferred folder name in your local: optional}
+git clone https://github.com/jackn3o/signalRTest.git
 ```
 
 2. Once complete, cd to repo directory
